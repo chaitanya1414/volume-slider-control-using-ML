@@ -5,11 +5,11 @@ from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 
-# Initialize MediaPipe Hands
+# Initializing MediaPipe Hands
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
 
-# Initialize VideoCapture
+# Initializing VideoCapture
 cap = cv2.VideoCapture(0)
 
 # Pycaw setup to control system volume
@@ -21,7 +21,7 @@ volume_range = volume.GetVolumeRange()
 min_vol = volume_range[0]
 max_vol = volume_range[1]
 
-# Additional constant to adjust sensitivity
+# adjusting the sensitivity depending on the camera's position, etc
 SENSITIVITY_SCALE = 3000
 
 def calculate_distance(landmark1, landmark2):
